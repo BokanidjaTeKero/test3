@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Registar User</title>
+</head>
+<body>
+    
+    <div class="main-div">
+        <div class="dropdown">
+            <button id="myBtn" class="dropbtn">
+                <div class="container btn-round" onclick="myFunction(this)">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+            </button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="home.html"><button>Home</button></a>
+                <a href="login.html" ><button>LogIn</button></a>
+                <a href="registar.html"><button>Reg</button></a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="reg">
+        <div class="regInputs">
+            <h3>REGISTER USER</h3>
+            <br>
+            <br>
+            <input placeholder="Name" id="userName" type="text">
+            <br>
+            <br>
+            <input placeholder="Last Name" id="userLastName" type="text">
+            <br>
+            <br>
+            <input placeholder="Genre" id="userGenre" type="text">
+            <br>
+            <br>
+            <input placeholder="Email" id="userEmail" type="text">
+            <br>
+            <br>
+            <input placeholder="Password" id="userPassword" type="text">
+            <br>
+            <br>
+            <input placeholder="Age" id="userAge" type="text">
+            <br>
+            <br>
+            <input placeholder="DateOfBirth" id="userDateOfBirth" type="text">
+            <br>
+            <br>
+            <input placeholder="City" id="userCity" type="text">
+            <br>
+            <br>
+            <input placeholder="Country" id="userCountry" type="text">
+            <br>
+            <br>
+        </div>
+        <div class="btns">
+            <button id="SubmitUser" class="Accept btn">Submit</button>
+            <a href="home.html"><button id="Cancil" class="Cancil btn">Cancil</button></a>
+        </div>
+    </div>
+
+    <div id="myNotificationAdd" class="myNotification">
+        PODACI USPESNO UPISANI U LOCALSTORAGE
+    </div>
+
+
+    <script src="navigation.js"></script>
+    <script src="index.js"></script>
+    <script src="reg.js"></script>
+
+</body>
+</html>

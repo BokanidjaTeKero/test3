@@ -1,0 +1,355 @@
+
+body {
+    background-image: url('https://www.noisiamofuturo.it/wp-content/uploads/2017/01/Matrix-Background-Wallpaper.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+#imgPlaceholder {
+    background-color: black;
+}
+
+.error {
+    border: 1px solid red;
+}
+
+.good {
+    border: 1px solid green;
+}
+
+.myNotification {
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding: 10px;
+    transform: translateX(-110%);
+    transition: transform 250ms ease-in-out;
+}
+
+.isAdd {
+    transform: translateX(0);
+    background-color: green;
+}
+
+.isRem {
+    transform: translateX(0);
+    background-color: orange;
+}
+
+.isError {
+    transform: translateX(0);
+    background-color: red;
+}
+
+/* navigation */
+
+.dropbtn {
+    padding: 10px;
+    border-radius: 50%;
+    text-align: center;
+    border: none;
+    width: 60px;
+    position: relative;  
+    cursor: pointer;
+    background-color: rgb(52, 83, 6);
+    text-shadow: 0 0 3px rgb(13, 245, 5), 0 0 5px rgb(13, 245, 5);
+}
+
+.dropbtn:hover {
+    background-color: rgb(103, 165, 11);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition: 1s;
+    text-shadow: 0 0 3px rgb(13, 245, 5), 0 0 5px rgb(13, 245, 5);
+} 
+.main-div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70px;
+    height: 430px;
+    overflow: auto;
+
+    
+}
+
+.dropdown {
+    position: absolute;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    text-shadow: 0 0 3px rgb(13, 245, 5), 0 0 5px rgb(13, 245, 5);
+    
+}
+
+.dropdown-content button {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 50%;
+    text-align: center;
+    border: none;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 20px;
+    background-color: rgb(52, 83, 6);
+    text-shadow: 0 0 3px rgb(13, 245, 5), 0 0 5px rgb(13, 245, 5);
+    
+}
+
+
+.dropdown-content button:hover {
+    color: black;
+    background-color: rgb(103, 165, 11);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition: 1s;
+    text-shadow: 0 0 3px rgb(13, 245, 5), 0 0 5px rgb(13, 245, 5);
+}
+
+.show {
+    display:block;
+    transition: 2s;
+}
+
+.container {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: rgb(8, 6, 6);
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.bar1:hover, .bar2:hover, .bar3:hover {
+    background-color: white;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+/* end of navigation */
+
+
+/* login*/
+
+.login {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: yellow; */
+    width: 400px;
+    
+    position: fixed;
+    top: 70%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
+input {
+    height: 25px;
+    background-color: rgb(11, 41, 11);
+    color: white;
+    box-shadow: 0 0 3px rgb(13, 245, 5), 0 0 5px rgb(13, 245, 5);
+    text-shadow: 0 0 3px rgb(13, 245, 5), 0 0 5px rgb(13, 245, 5);
+}
+
+input::placeholder {
+    color: white;
+    text-shadow: 0 0 3px rgb(13, 245, 5), 0 0 5px rgb(13, 245, 5);
+}
+
+.loginInputs h3 {
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    text-shadow: 0 0 3px rgb(13, 245, 5), 0 0 5px rgb(13, 245, 5);
+}
+
+.btn {
+    border-radius: 20px;
+    width: 70px;
+    padding: 5px 10px;
+    margin: 10px;
+}
+
+.Accept {
+    background-color: rgb(0, 110, 255);
+}
+
+.Accept:hover {
+    background-color: rgb(16, 16, 230);
+    color: white;
+}
+
+.Cancil {
+    background-color: rgb(243, 107, 73);
+}
+
+.Cancil:hover {
+    background-color: red;
+    color: white;
+}
+
+
+/* register */
+
+.reg {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgba(2, 2, 2, 0.568);
+    width: 400px;
+    border-radius: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    padding: 30px;
+}
+
+.regInputs h3{
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    text-shadow: 0 0 3px rgb(13, 245, 5), 0 0 5px rgb(13, 245, 5);
+}
+
+/* admin */
+
+.admin {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(2, 2, 2, 0.568);
+    width: 800px;
+    border-radius: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    padding: 30px;
+}
+
+.admin h3 {
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    text-shadow: 0 0 3px rgb(13, 245, 5), 0 0 5px rgb(13, 245, 5);
+    padding-bottom: 40px;
+}
+
+.adminUsersView {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.adminUsers {
+    background-color: rgba(39, 39, 8, 0.739);
+    width: 400px;
+    margin-right: 20px;
+    padding: 10px;
+}
+
+.adminUsers ul {
+    margin-bottom: 30px;
+    background-color: rgba(11, 11, 27, 0.781);
+    padding: 5px;
+}
+
+.adminUsers li {
+    padding: 5px;
+    margin-left: 10px;
+    font-size: 20px;
+    color: white;
+    text-shadow: 0 0 3px rgb(13, 245, 5), 0 0 5px rgb(13, 245, 5);
+}
+
+.adminUsersList {
+    background-color: rgba(39, 39, 8, 0.739);
+    width: 300px;
+    margin-left: 30px;
+}
+
+.adminUsersList ul {
+    background-color: rgba(11, 11, 27, 0.781);
+    padding: 5px;
+    margin: 10px;
+}
+
+.adminUsersList li {
+    padding: 2px;
+    margin-left: 3px;
+    font-size: 20px;
+    color: white;
+}
+
+/* user */
+
+.User {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(2, 2, 2, 0.568);
+    width: 400px;
+    border-radius: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    padding: 30px;
+}
+
+.User h3 {
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    text-shadow: 0 0 3px rgb(13, 245, 5), 0 0 5px rgb(13, 245, 5);
+}
+
+.User ul {
+    margin-bottom: 30px;
+    background-color: rgba(11, 11, 27, 0.781);
+    padding: 5px;
+    width: 350px;
+    margin: auto;
+}
+
+.User li {
+    padding: 5px;
+    margin-left: 10px;
+    font-size: 20px;
+    color: white;
+    text-shadow: 0 0 3px rgb(13, 245, 5), 0 0 5px rgb(13, 245, 5);
+}

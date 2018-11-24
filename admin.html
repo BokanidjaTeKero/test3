@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Admin</title>
+</head>
+<body>
+    
+    <div class="main-div">
+        <div class="dropdown">
+            <button id="myBtn" class="dropbtn">
+                <div class="container btn-round" onclick="myFunction(this)">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+            </button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="home.html"><button>Home</button></a>
+                <a href="login.html" ><button>LogIn</button></a>
+                <a href="registar.html"><button>Reg</button></a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="admin">
+        <h3>ADMIN</h3>
+        <div class="adminUsersView">
+            <div class="adminUsers">
+
+                <h3>User</h3><br><br>
+                <!-- <img id="imgPlaceholder" src="" alt="NO IMAGE" /> -->
+                <ul id="userList">
+                    <li>Name___: <span></span></li>
+                    <li>Last Name___: <span></span></li>
+                    <li>Genre___: <span></span></li>
+                    <li>Email___: <span></span></li>
+                    <li>Password___: <span></span></li>
+                    <li>Age___: <span></span></li>
+                    <li>Date Of Birth___: <span></span></li>
+                    <li>City___: <span></span></li>
+                    <li>Country___: <span></span></li>
+                </ul>
+
+            </div>
+            <div class="adminUsersList">
+
+                <h3>Users List</h3>
+                <br>
+                <ul id="users"></ul>
+
+            </div>
+        </div>
+        <div class="adminControle">
+            <br>
+            <button id="DeleteUser" class="DeleteUser btn Cancil" >Delete</button>
+            <br>
+        </div>
+    </div>
+
+    <div id="myNotificationRem" class="myNotification">
+        PODACI USPESNO OBRISANI IZ LOCALSTORAGE
+    </div>
+    <div id="myNotificationError" class="myNotification">
+        DOSLO JE DO GRESKE!
+    </div>
+
+    <script src="navigation.js"></script>
+    <script src="index.js"></script>
+    <script src="admin.js"></script>
+
+</body>
+</html>
