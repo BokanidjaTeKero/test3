@@ -29,8 +29,9 @@ Login.addEventListener('click', () => {
     console.log('input password', password)
     
     if (user) {
-        console.log('USER', user.password);
+        // console.log('USER', user.password);
         if (user.password === password) {
+            setLocalStorage('loggedUser', user);
             window.location = 'user.html';
         } else if (password.length === 0) {
             errorMessage('UNESI PASSWORD')
@@ -43,7 +44,7 @@ Login.addEventListener('click', () => {
 
  
 
-    //  valid();
+     valid();
 
      // get user email (key) from localstorage
 
@@ -87,22 +88,22 @@ else {
 
 }
 
-function kurcinaBre() {
-    for( var i = 0, len = localStorage.length; i < len; ++i) {
-        var key = localStorage.key(i);
-        var storedEmail = key.email;
-        var storedPassword = key.password;
+// function kurcinaBre() {
+//     for( var i = 0, len = localStorage.length; i < len; ++i) {
+//         var key = localStorage.key(i);
+//         var storedEmail = key.email;
+//         var storedPassword = key.password;
         
-        var email = userEmailInput.value ;
-        var password = userPasswordInput.value;
+//         var email = userEmailInput.value ;
+//         var password = userPasswordInput.value;
 
-        if(email == storedEmail && password == storedPassword) {
-        window.location = "user.html";
-        } else {
-        alert('greska sa juzerom');
-        }
-    }
-}
+//         if(email == storedEmail && password == storedPassword) {
+//         window.location = "user.html";
+//         } else {
+//         alert('greska sa juzerom');
+//         }
+//     }
+// }
 
 
 

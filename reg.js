@@ -8,14 +8,27 @@ var userAgeInput = document.getElementById('userAge');
 var userDateOfBirthInput = document.getElementById('userDateOfBirth');
 var userCityInput = document.getElementById('userCity');
 var userCountryInput = document.getElementById('userCountry');
-// var userImgInput = document.getElementById('userImage');
+var userImgInput = document.getElementById('userImage');
 var SubmitUser = document.getElementById('SubmitUser');
 var userList = document.getElementById('userList');
 var users = document.getElementById('users');
 var myNotificationAdd = document.getElementById('myNotificationAdd');
 
+var image = document.getElementById('image_uploads');
+
+image.addEventListener('change', (e) => {
+    
+
+    var imageValue = e.target.value;
+    
+    var imagePath = takeImagePath(imageValue)
+
+    userImgInput.setAttribute('src', imagePath);
 
 
+})
+
+console.log('IMAGE', image.value)
 function setLocalStorage(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
     myNotificationAdd.classList.add('isAdd');
@@ -25,6 +38,9 @@ function setLocalStorage(key, value) {
     }, 2000);
 }
 
+function takeImagePath(imgPath) {
+    return `/images/${imgPath.split('\\')[2]}`; 
+}
 
 
 SubmitUser.addEventListener('click', () => {
@@ -40,8 +56,8 @@ SubmitUser.addEventListener('click', () => {
     user.dateOfBirth = userDateOfBirthInput.value;
     user.city = userCityInput.value;
     user.country = userCountryInput.value;
+    user.uploadedImage = takeImagePath(image.value);
     // user.img = userImgInput.value;
-
 
     var isValid = false;
 

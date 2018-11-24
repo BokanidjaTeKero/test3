@@ -17,10 +17,11 @@ function getUserFromLocalStorageOnload() {
 
 DeleteUser.addEventListener('click', () => {
 
-    var key = userList.querySelector('li span').innerText;
+    var key = userList.querySelector('li.email span').innerText;
 
     if (key) {
         removeUser(key);
+        
         clearSelectedUser();
     }
 })
