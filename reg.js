@@ -80,8 +80,9 @@ SubmitUser.addEventListener('click', () => {
 
 
     if(isValid) {
-        setLocalStorage(user.name, user); 
+        setLocalStorage(user.email, user); 
         clearInputFields();
+        window.location = 'login.html'
     }
 
 });

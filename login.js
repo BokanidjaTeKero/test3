@@ -5,22 +5,50 @@ var Login = document.getElementById('Login');
 var myNotificationAdd = document.getElementById('myNotificationAdd');
 var myNotificationAdd = document.getElementById('myNotificationAdd');
  
-function getUserFromLocalStorageOnload() {
-    for( var i = 0, len = localStorage.length; i < len; ++i) {
-        var key = localStorage.key(i);
-       
-    } 
-
-}
 
 function setLocalStorage(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
 }
 
+function getUserFromLocalStorage(key) {
+    return JSON.parse(localStorage.getItem(key));
+}
+
+function errorMessage(message) {
+    alert(message)
+}
+
 
 Login.addEventListener('click', () => {
-    getUserFromLocalStorageOnload();
-     valid();
+    
+    var email = userEmailInput.value;
+    var password = userPasswordInput.value;
+
+    var user = getUserFromLocalStorage(email);
+
+    console.log('input password', password)
+    
+    if (user) {
+        console.log('USER', user.password);
+        if (user.password === password) {
+            window.location = 'user.html';
+        } else if (password.length === 0) {
+            errorMessage('UNESI PASSWORD')
+        } else {
+            errorMessage('INVALID PASSWORD')
+        }
+    } else {
+        errorMessage('NO USER WITH THAT EMAIL ADDRESS')
+    }
+
+ 
+
+    //  valid();
+
+     // get user email (key) from localstorage
+
+     // check if password from local storage is equal to input password
+
     //  kurcinaBre();
     // getUserFromLocalStorageOnload()
 })
