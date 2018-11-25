@@ -7,7 +7,12 @@ var userAgeInput = document.getElementById('userAge');
 var userDateOfBirthInput = document.getElementById('userDateOfBirth');
 var userCityInput = document.getElementById('userCity');
 var userCountryInput = document.getElementById('userCountry');
+var userImg = document.getElementById('userImage');
 var logoutBtn = document.getElementById('logout');
+
+// var image = document.getElementById('image_uploads');
+
+
 
 logoutBtn.style.display = 'none';
 
@@ -27,6 +32,7 @@ function showUser(data) {
     var dateOfBirth = userListLi[6];
     var city = userListLi[7];
     var country = userListLi[8];
+    var img = userListLi[9];
     // var img = imgPlaceholder;
 
     name.innerText = data.name;
@@ -38,9 +44,10 @@ function showUser(data) {
     dateOfBirth.innerText = data.dateOfBirth;
     city.innerText = data.city;
     country.innerText = data.country;
+    img.innerText = data.uploadedImage;
     
     // img.setAttribute('src', data.img)
-
+    userImg.setAttribute('src', img.innerText);
 }
 
 var loggedUser = getUserFromLocalStorage('loggedUser');

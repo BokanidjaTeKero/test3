@@ -4,6 +4,7 @@ var users = document.getElementById('users');
 var DeleteUser = document.getElementById('DeleteUser');
 var myNotificationRem = document.getElementById('myNotificationRem');
 var myNotificationError = document.getElementById('myNotificationError');
+var userImg = document.getElementById('userImage');
 
 
 function getUserFromLocalStorageOnload() {
@@ -40,6 +41,7 @@ function showUser(user) {
     var dateOfBirth = userListLi[6];
     var city = userListLi[7];
     var country = userListLi[8];
+    var img = userListLi[9];
     // var img = imgPlaceholder;
 
     var data = getDataFromLocalStorage(user);
@@ -53,9 +55,10 @@ function showUser(user) {
     dateOfBirth.innerText = data.dateOfBirth;
     city.innerText = data.city;
     country.innerText = data.country;
+    img.innerText = data.uploadedImage;
     
     // img.setAttribute('src', data.img)
-
+    userImg.setAttribute('src', img.innerText);
 }
 
 
@@ -87,6 +90,7 @@ function clearSelectedUser() {
     var dateOfBirth = userListLi[6];
     var city = userListLi[7];
     var country = userListLi[8];
+    var img = userListLi[9];
     // var img = imgPlaceholder;
 
     name.innerText = '';
@@ -98,6 +102,9 @@ function clearSelectedUser() {
     dateOfBirth.innerText = '';
     city.innerText = '';
     country.innerText = '';
+    img.innerText = '';
+
+    
     // img.removeAttribute('src');
 }
 

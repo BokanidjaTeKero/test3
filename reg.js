@@ -21,14 +21,14 @@ image.addEventListener('change', (e) => {
 
     var imageValue = e.target.value;
     
-    var imagePath = takeImagePath(imageValue)
+    var imagePath = takeImagePath(imageValue);
 
     userImgInput.setAttribute('src', imagePath);
 
 
 })
 
-console.log('IMAGE', image.value)
+// console.log('IMAGE', image.value)
 function setLocalStorage(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
     myNotificationAdd.classList.add('isAdd');
