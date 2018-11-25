@@ -30,6 +30,8 @@ DeleteUser.addEventListener('click', () => {
 
 
 function showUser(user) {
+
+    
     
     var userListLi = userList.querySelectorAll('li span');
     var name = userListLi[0];
@@ -46,6 +48,8 @@ function showUser(user) {
 
     var data = getDataFromLocalStorage(user);
 
+    
+
     name.innerText = data.name;
     lastName.innerText = data.lastName;
     genre.innerText = data.genre;
@@ -56,7 +60,7 @@ function showUser(user) {
     city.innerText = data.city;
     country.innerText = data.country;
     img.innerText = data.uploadedImage;
-    
+
     // img.setAttribute('src', data.img)
     userImg.setAttribute('src', img.innerText);
 }
