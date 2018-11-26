@@ -38,6 +38,7 @@ function setLocalStorage(key, value) {
     }, 2000);
 }
 
+
 function takeImagePath(imgPath) {
     return `/images/${imgPath.split('\\')[2]}`; 
 }
@@ -67,13 +68,13 @@ SubmitUser.addEventListener('click', () => {
     //     failures.push({'userName', msg: 'dadadada'})
     // }
 
-    if(user.name.length > 8) {
+    if(user.name.length > 1) {
         userNameInput.setAttribute('class', 'good');
-        if(user.lastName.length > 8) {
+        if(user.lastName.length > 1) {
             userLastNameInput.setAttribute('class', 'good');
             if(user.email.match(/[@]/g)) {
                 userEmailInput.setAttribute('class', 'good');
-                if(user.password.length && user.password.match(/[A-Z]/g) && user.password.match(/[0-9]/g)) {
+                if(user.password.length > 5 && user.password.match(/[A-Z]/g) && user.password.match(/[0-9]/g)) {
                     userPasswordInput.setAttribute('class', 'good');
                     if(user.age.length > 0 && user.age.match(/[0-9]/g)) {
                         userAgeInput.setAttribute('class', 'good');
@@ -98,7 +99,10 @@ SubmitUser.addEventListener('click', () => {
     if(isValid) {
         setLocalStorage(user.email, user); 
         clearInputFields();
-        window.location = 'login.html'
+        setTimeout(function() {
+            window.location = 'login.html';
+        }, 2500);
+       
     }
 
 });

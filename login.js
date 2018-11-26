@@ -3,7 +3,10 @@ var userEmailInput = document.getElementById('userEmail');
 var userPasswordInput = document.getElementById('userPassword');
 var Login = document.getElementById('Login');
 var myNotificationAdd = document.getElementById('myNotificationAdd');
-var myNotificationAdd = document.getElementById('myNotificationAdd');
+var myNotificationTypePassword = document.getElementById('myNotificationTypePassword');
+var myNotificationInvalidPassword = document.getElementById('myNotificationInvalidPassword');
+var myNotificationWelcomeNeo = document.getElementById('myNotificationWelcomeNeo');
+var myLoader = document.getElementById('Loader');
  
 
 function setLocalStorage(key, value) {
@@ -26,20 +29,33 @@ Login.addEventListener('click', () => {
 
     var user = getUserFromLocalStorage(email);
 
-    console.log('input password', password)
+    // console.log('input password', password)
     
     if (user) {
         // console.log('USER', user.password);
         if (user.password === password) {
             setLocalStorage('loggedUser', user);
-            window.location = 'user.html';
+            myLoader.classList.add('isLoading');
+            setTimeout(function() {
+                myLoader.classList.remove('isLoading')
+                window.location = 'user.html';
+            },2000);
         } else if (password.length === 0) {
-            errorMessage('UNESI PASSWORD')
+            myNotificationTypePassword.classList.add('isAdd');
+            setTimeout(function() {
+                myNotificationTypePassword.classList.remove('isAdd');
+            }, 1500);
         } else {
-            errorMessage('INVALID PASSWORD')
+            myNotificationInvalidPassword.classList.add('isAdd');
+            setTimeout(function() {
+                myNotificationInvalidPassword.classList.remove('isAdd');
+            }, 1500);
         }
     } else {
-        errorMessage('NO USER WITH THAT EMAIL ADDRESS')
+        myNotificationWelcomeNeo.classList.add('isAdd');
+        setTimeout(function() {
+            myNotificationWelcomeNeo.classList.remove('isAdd');
+        }, 1500);
     }
 
  
@@ -80,12 +96,13 @@ var adminPassword = 'admin';
 
 
 if(adminEmail == userEmailInput.value && adminPassword == userPasswordInput.value) {
-    window.location = "admin.html";
+    myNotificationWelcomeNeo.classList.add('isAdd');
+        setTimeout(function() {
+            myNotificationWelcomeNeo.classList.remove('isAdd');
+            window.location = "admin.html";
+        }, 1500);
+    
 }
-else {
-    alert('greska');
-}
-
 }
 
 // function kurcinaBre() {

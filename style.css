@@ -63,6 +63,8 @@ body {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     transition: 1s;
     text-shadow: 0 0 3px rgb(13, 245, 5), 0 0 5px rgb(13, 245, 5);
+    border: 1px solid white;
+    box-shadow:  0 0 10px rgb(13, 245, 5), 0 0 15px rgb(13, 245, 5);
 } 
 .main-div {
     position: relative;
@@ -73,6 +75,8 @@ body {
     height: 430px;
     overflow: auto;
     z-index: 999;
+    top: 10px;
+    left: 10px;
     
 }
 
@@ -107,7 +111,6 @@ body {
     margin-top: 20px;
     background-color: rgb(52, 83, 6);
     text-shadow: 0 0 3px rgb(13, 245, 5), 0 0 5px rgb(13, 245, 5);
-    
 }
 
 
@@ -117,6 +120,8 @@ body {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     transition: 1s;
     text-shadow: 0 0 3px rgb(13, 245, 5), 0 0 5px rgb(13, 245, 5);
+    border: 1px solid black;
+    box-shadow:  0 0 10px rgb(13, 245, 5), 0 0 15px rgb(13, 245, 5);
 }
 
 .show {
@@ -176,8 +181,16 @@ input {
     height: 25px;
     background-color: rgb(11, 41, 11);
     color: white;
-    box-shadow: 0 0 3px rgb(13, 245, 5), 0 0 5px rgb(13, 245, 5);
     text-shadow: 0 0 3px rgb(13, 245, 5), 0 0 5px rgb(13, 245, 5);
+    padding: 5px;
+}
+input:hover {
+    border: 1px solid white;
+    box-shadow:  0 0 10px rgb(13, 245, 5), 0 0 15px rgb(13, 245, 5);
+}
+input:focus {
+    border: 1px solid white;
+    box-shadow:  0 0 10px rgb(13, 245, 5), 0 0 15px rgb(13, 245, 5);
 }
 
 input::placeholder {
@@ -198,6 +211,14 @@ input::placeholder {
     padding: 5px 10px;
     margin: 10px;
 }
+.Edit {
+    background-color: yellowgreen;
+}
+.Edit:hover {
+    background-color: yellow;
+    color: black;border: 1px solid white;
+    box-shadow:  0 0 10px rgb(13, 245, 5), 0 0 15px rgb(13, 245, 5);
+}
 
 .Accept {
     background-color: rgb(0, 110, 255);
@@ -205,7 +226,8 @@ input::placeholder {
 
 .Accept:hover {
     background-color: rgb(16, 16, 230);
-    color: white;
+    color: white;border: 1px solid white;
+    box-shadow:  0 0 10px rgb(13, 245, 5), 0 0 15px rgb(13, 245, 5);
 }
 
 .Cancil {
@@ -214,7 +236,8 @@ input::placeholder {
 
 .Cancil:hover {
     background-color: red;
-    color: white;
+    color: white;border: 1px solid white;
+    box-shadow:  0 0 10px rgb(13, 245, 5), 0 0 15px rgb(13, 245, 5);
 }
 
 
@@ -240,6 +263,8 @@ input::placeholder {
     width: 100px;
     margin: 5px;
     border-radius: 50%;
+    border: 1px solid white;
+    box-shadow:  0 0 10px rgb(13, 245, 5), 0 0 15px rgb(13, 245, 5);
 }
 
 .regInputs h3{
@@ -358,4 +383,49 @@ input::placeholder {
     font-size: 20px;
     color: white;
     text-shadow: 0 0 3px rgb(13, 245, 5), 0 0 5px rgb(13, 245, 5);
+}
+
+/* loader-spiner */
+
+.loader {
+    border: 10px;
+    border-radius: 50%;
+    border-top: 4px solid black;
+    border-bottom: 20px solid rgba(0, 0, 0, 0.698);
+    box-shadow: 0 0 10px rgb(13, 245, 5), 0 0 15px rgb(13, 245, 5);
+    width: 100px;
+    height: 100px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 0.8s linear infinite;
+}
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.loadAnimation {
+    color: white;
+    text-shadow: 0 0 3px rgb(13, 245, 5), 0 0 5px rgb(13, 245, 5);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 250px;
+    background-color: rgba(14, 13, 13, 0.733);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 30px;
+    border: 1px solid white;
+    border-radius: 15px;
+    box-shadow:  0 0 10px rgb(13, 245, 5), 0 0 15px rgb(13, 245, 5);
+}
+.isLoading{
+    display: flex;
 }
