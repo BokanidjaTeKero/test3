@@ -44,7 +44,7 @@ function showUser(user) {
     var city = userListLi[7];
     var country = userListLi[8];
     var img = userListLi[9];
-    // var img = imgPlaceholder;
+    
 
     var data = getDataFromLocalStorage(user);
 
@@ -61,7 +61,6 @@ function showUser(user) {
     country.innerText = data.country;
     img.innerText = data.uploadedImage;
 
-    // img.setAttribute('src', data.img)
     userImg.setAttribute('src', img.innerText);
 }
 
@@ -95,7 +94,7 @@ function clearSelectedUser() {
     var city = userListLi[7];
     var country = userListLi[8];
     var img = userListLi[9];
-    // var img = imgPlaceholder;
+   
 
     name.innerText = '';
     lastName.innerText = '';
@@ -109,7 +108,7 @@ function clearSelectedUser() {
     img.innerText = '';
 
     
-    // img.removeAttribute('src');
+   
 }
 
 

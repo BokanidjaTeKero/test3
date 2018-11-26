@@ -10,9 +10,13 @@ body {
 #imgPlaceholder {
     background-color: black;
 }
+a,img,button,input {
+    cursor: pointer;
+}
 
 .error {
-    border: 1px solid red;
+    border: 2px solid red;
+    box-shadow: 0 0 3px rgb(245, 33, 5), 0 0 5px rgb(245, 33, 5);
 }
 
 .good {
@@ -88,15 +92,16 @@ body {
 
 
 .dropdown-content {
-    display: none;
+    /* display: none; */
     position: absolute;
     text-align: center;
     margin: 0 auto;
     text-shadow: 0 0 3px rgb(13, 245, 5), 0 0 5px rgb(13, 245, 5);
-    
+    transform: translateX(-110%);
 }
 
 .dropdown-content button {
+
     color: white;
     text-decoration: none;
     padding: 5px;
@@ -126,8 +131,13 @@ body {
 
 .show {
     display:block;
-    transition: 2s;
+    /* transition: 2s; */
+    transform: translateX(0);
+    transition: transform 1000ms ease-in-out;
 }
+/* .notShow {
+    display: none;
+} */
 
 .container {
     display: inline-block;
@@ -428,4 +438,28 @@ input::placeholder {
 }
 .isLoading{
     display: flex;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 150px;
+    background-color: rgb(5, 47, 3);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 105%;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }

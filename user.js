@@ -10,7 +10,7 @@ var userCountryInput = document.getElementById('userCountry');
 var userImg = document.getElementById('userImage');
 var logoutBtn = document.getElementById('logout');
 
-// var image = document.getElementById('image_uploads');
+
 
 
 
@@ -33,7 +33,7 @@ function showUser(data) {
     var city = userListLi[7];
     var country = userListLi[8];
     var img = userListLi[9];
-    // var img = imgPlaceholder;
+    
 
     name.innerText = data.name;
     lastName.innerText = data.lastName;
@@ -46,7 +46,7 @@ function showUser(data) {
     country.innerText = data.country;
     img.innerText = data.uploadedImage;
     
-    // img.setAttribute('src', data.img)
+    
     userImg.setAttribute('src', img.innerText);
 }
 

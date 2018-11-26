@@ -13,6 +13,7 @@ var SubmitUser = document.getElementById('SubmitUser');
 var userList = document.getElementById('userList');
 var users = document.getElementById('users');
 var myNotificationAdd = document.getElementById('myNotificationAdd');
+var myLoader = document.getElementById('Loader');
 
 var image = document.getElementById('image_uploads');
 
@@ -28,13 +29,14 @@ image.addEventListener('change', (e) => {
 
 })
 
-// console.log('IMAGE', image.value)
+
 function setLocalStorage(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
     myNotificationAdd.classList.add('isAdd');
-
+    myLoader.classList.add('isLoading');
     setTimeout(function() {
         myNotificationAdd.classList.remove('isAdd');
+        myLoader.classList.remove('isLoading');
     }, 2000);
 }
 
@@ -58,15 +60,10 @@ SubmitUser.addEventListener('click', () => {
     user.city = userCityInput.value;
     user.country = userCountryInput.value;
     user.uploadedImage = takeImagePath(image.value);
-    // user.img = userImgInput.value;
+    
 
     var isValid = false;
 
-    // let failures = [];
-
-    // if(user.name.length < 8){
-    //     failures.push({'userName', msg: 'dadadada'})
-    // }
 
     if(user.name.length > 1) {
         userNameInput.setAttribute('class', 'good');
@@ -119,7 +116,7 @@ function clearInputFields() {
     userDateOfBirthInput.value = '';
     userCityInput.value = '';
     userCountryInput.value = '';
-    // userImgInput.value = '';
+  
 
     userNameInput.setAttribute('class','');
     userLastNameInput.setAttribute('class','');
@@ -130,5 +127,5 @@ function clearInputFields() {
     userDateOfBirthInput.setAttribute('class', '');
     userCityInput.setAttribute('class', '');
     userPasswordInput.setAttribute('class', '');
-    // userImgInput.setAttribute('class','');
+    
 }

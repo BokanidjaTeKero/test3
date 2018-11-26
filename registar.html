@@ -36,39 +36,74 @@
             <img src="/images/morphius.jpg" alt="NO IMAGE" class="userImg" id="userImage">
             <br>
             <br>
-            <input placeholder="Name" id="userName" type="text">
+                <div class="tooltip">
+                    <input placeholder="Name" id="userName" class="tooltip" type="text">
+                    <span class="tooltiptext">Must have more then one letter</span>
+                </div>
             <br>
             <br>
-            <input placeholder="Last Name" id="userLastName" type="text">
+                <div class="tooltip">
+                    <input placeholder="Last Name" id="userLastName" class="tooltip" type="text">
+                    <span class="tooltiptext">Must have more than one letter</span>
+                </div>
             <br>
             <br>
-            <input placeholder="Genre" id="userGenre" type="text">
+                <div class="tooltip">
+                    <input placeholder="Genre" id="userGenre" class="tooltip" type="text">
+                    <span class="tooltiptext">Male/Femal M/F</span>
+                </div>
             <br>
             <br>
-            <input placeholder="Email" id="userEmail" type="text">
+                <div class="tooltip">
+                    <input placeholder="Email" id="userEmail" class="tooltip" type="text">
+                    <span class="tooltiptext">Must have "@" letter</span>
+                </div>
             <br>
             <br>
-            <input placeholder="Password" id="userPassword" type="text">
+                <div class="tooltip">
+                    <input placeholder="Password" id="userPassword" class="tooltip" type="text">
+                    <span class="tooltiptext">Must have atleast one number and one upercase letter</span>
+                </div>
             <br>
             <br>
-            <input placeholder="Age" id="userAge" type="text">
+                <div class="tooltip">
+                    <input placeholder="Age" id="userAge" class="tooltip" type="text">
+                    <span class="tooltiptext">Must be a number</span>
+                </div>
             <br>
             <br>
-            <input placeholder="DateOfBirth" id="userDateOfBirth" type="text">
+                <div class="tooltip">
+                    <input placeholder="DateOfBirth" id="userDateOfBirth" class="tooltip" type="text">
+                    <span class="tooltiptext">Date when you are birth</span>
+                </div>
             <br>
             <br>
-            <input placeholder="City" id="userCity" type="text">
+                <div class="tooltip">
+                    <input placeholder="City" id="userCity" class="tooltip" type="text">
+                    <span class="tooltiptext">City where are you living</span>
+                </div>
             <br>
             <br>
-            <input placeholder="Country" id="userCountry" type="text">
+                <div class="tooltip">
+                    <input placeholder="Country" id="userCountry" class="tooltip" type="text">
+                    <span class="tooltiptext">Country where are you leaving</span>
+                </div>
             <br>
             <br>
-            <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png">
+                <div class="tooltip">
+                    <input type="file" id="image_uploads" class="tooltip" name="image_uploads" accept=".jpg, .jpeg, .png">
+                    <span class="tooltiptext">Press "Choose File" and select image for your profile</span>
+                </div>
         </div>
         <div class="btns">
             <button id="SubmitUser" class="Accept btn">Submit</button>
             <a href="home.html"><button id="Cancil" class="Cancil btn">Cancil</button></a>
         </div>
+    </div>
+
+    <div class="loadAnimation" id="Loader">
+        <div class="loader"></div>
+        LOADING . . .
     </div>
 
     <div id="myNotificationAdd" class="myNotification">
